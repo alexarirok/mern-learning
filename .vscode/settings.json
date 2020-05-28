@@ -1,0 +1,10 @@
+{
+    "jshint.options": {
+        "asi": true,
+        "esversion":6
+    },
+    "jshint.exclude": {
+    
+    },
+    "jshint.excludePath": ""
+}

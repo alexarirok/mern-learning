@@ -2,6 +2,7 @@
   "dependencies": {
     "@hot-loader/react-dom": "^16.13.0",
     "express": "^4.17.1",
+    "express-load": "^1.1.16",
     "mongodb": "^3.5.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -12,6 +13,7 @@
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
     "babel-loader": "^8.1.0",
+    "jshint": "^2.11.1",
     "nodemon": "^2.0.4",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
@@ -21,7 +23,22 @@
   },
   "name": "mern-lesson-1",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "a quick mern stack installation",
   "author": "alex",
-  "license": "MIT"
+  "main": "template.js",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "node",
+    "express",
+    "mongodb",
+    "mern"
+  ],
+  "repository": "https://github.com/alexarirok/mern-learning.git",
+  "homepage": "https://github.com/alexarirok/mern-learning",
+  "scripts": {
+    "development": "nodemon",
+    "build": "webpack --config webpack.config.client.production.js && webpack --mode=production --config webpack.config.server.js",
+    "start": "NODE_ENV=production node ./dist/server.generated.js"
+  }
 }

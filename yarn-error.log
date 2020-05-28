@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add -D webpack-cli
 
 PATH: 
   C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Program Files\Microsoft VS Code\bin;C:\Program Files (x86)\Yarn\bin\;C:\Users\AqCode\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\AqCode\AppData\Local\Programs\Python\Python37\;C:\Users\AqCode\AppData\Local\Microsoft\WindowsApps;C:\Users\AqCode\AppData\Roaming\npm;C:\Users\AqCode\AppData\Local\Yarn\bin
@@ -14,28 +14,26 @@ Platform:
   win32 x64
 
 Trace: 
-  SyntaxError: C:\Users\AqCode\Documents\mern-projects\mern-lesson-1\package.json: Unexpected token } in JSON at position 206
-      at JSON.parse (<anonymous>)
-      at C:\Program Files (x86)\Yarn\lib\cli.js:1625:59
-      at Generator.next (<anonymous>)
-      at step (C:\Program Files (x86)\Yarn\lib\cli.js:310:30)
-      at C:\Program Files (x86)\Yarn\lib\cli.js:321:13
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:64:26)
 
 npm manifest: 
   {
     "dependencies": {
       "@hot-loader/react-dom": "^16.13.0",
       "express": "^4.17.1",
+      "express-load": "^1.1.16",
       "mongodb": "^3.5.7",
       "react": "^16.13.1",
       "react-dom": "^16.13.1",
-      "react-hot-loader": "^4.12.21",
+      "react-hot-loader": "^4.12.21"
     },
     "devDependencies": {
       "@babel/core": "^7.9.6",
       "@babel/preset-env": "^7.9.6",
       "@babel/preset-react": "^7.9.4",
       "babel-loader": "^8.1.0",
+      "jshint": "^2.11.1",
       "nodemon": "^2.0.4",
       "webpack": "^4.43.0",
       "webpack-cli": "^3.3.11",
@@ -45,9 +43,24 @@ npm manifest:
     },
     "name": "mern-lesson-1",
     "version": "1.0.0",
-    "main": "index.js",
+    "description": "a quick mern stack installation",
     "author": "alex",
-    "license": "MIT"
+    "main": "template.js",
+    "license": "MIT",
+    "keywords": [
+      "react",
+      "node",
+      "express",
+      "mongodb",
+      "mern"
+    ],
+    "repository": "https://github.com/alexarirok/mern-learning.git",
+    "homepage": "https://github.com/alexarirok/mern-learning",
+    "scripts": {
+      "development": "nodemon",
+      "build": "webpack --config webpack.config.client.production.js && webpack --mode=production --config webpack.config.server.js",
+      "start": "NODE_ENV=production node ./dist/server.generated.js"
+    }
   }
 
 yarn manifest: 

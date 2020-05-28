@@ -1,3 +1,7 @@
+const path = require('path')
+const webpack = require('webpack')
+const CURRENT_WORKING_DIR = process.cwd()
+
 const config = {
     name: "browser",
     mode: "development",
@@ -16,7 +20,9 @@ const config = {
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                use: ['babel-loader']
+                use: [
+                    'babel-loader'
+                ]
             }
         ]
     },
@@ -30,3 +36,5 @@ const config = {
         }
     }
 }
+
+module.exports = config 
